@@ -1,0 +1,67 @@
+<!-- 
+공간분할태그: 공간을 분할해서 원하는 레이아웃을 구성할 수 있다
+
+웹페이지를 구성할 때 경계를 분할하거나,
+영역을 나눌 때 사용하는 태그
+
+웹페이지 또한 용도에 맞게 공간을 분할해준다=>공간분할태그
+가장 대표적인 태그<div>
+div는 공간을 block 형식으로  분할한다
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+      /* div는 block형식으로 공간을 분할한다
+
+       1) display : block
+        -> width값과 height값의 설정이 가능한다.
+        ->div는 기본default값이 block이다. 
+        그래서 display에 대한 값을 지정해주지 않으면, 기본적으로 block 형식을 따른다
+      */
+      div{
+         background-color: pink;
+         width: 100px;
+         height: 100px;
+
+         display: inline;
+      }
+
+      span{
+         background-color: skyblue;
+         width: 100px;
+         height: 100px;
+
+         /* display: block; */
+         display: inline-block;
+      }
+
+
+
+      /* 2) display : inline
+          -대표적으로 <span>이 있음
+          -내가 담은 컨탠츠 까지만 크기로 삼는 속성
+          -width, height 값의 설정이 불가
+      
+      */
+    </style>
+ </head>
+ <body>
+    <div>오늘은</div>
+    <div>즐거운</div>
+    <div>수요일</div>
+
+
+    <span>쌍교숯불갈비</span>
+    <span>남도예담</span>
+    <span>맥도날드</span>
+
+ </body>
+ </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         /*모든 html요소는 box형으로 이루어져 있고, css box model을 참고로 합니다
+         종류:width, height, margin, border ...
+         
+         (안)  content - padding - border - margin  (바깥)
+         
+         */
+
+         /* 만약 공통된 디자인이 있으면 한꺼번에 적용시켜주는게 좋다 */
+         div{
+            width: 100px;
+            height: 100px;
+            border-top-left-radius:50px;
+            border-bottom-right-radius: 50px;
+         }
+
+        #box{
+            background-color: red;
+
+            /* margin : 경계선(border)을 기준으로 바깥 여백 */
+            /* margin: 20px;=>4방향으로 여백이 발생 */
+            margin-top:0px;
+            /* top bottom left right 등 방향과 함께 쓴다면 
+               그 방향대로 여백이 발생
+            */
+        }
+
+        #box2{
+            background-color: blue;
+            margin-left: 100px;
+        }
+        
+        #box3{
+            background-color: green;
+            margin-left: 200px;
+        }
+        
+        #box4{
+            background-color: gray;
+            margin-left: 300px;
+        }
+        
+        /* body태그가 가지고 있는 기본 margin값은 6px
+           딱 붙일려면 0px로 지정을 해줘야 한다. */
+
+        body{
+            margin: 0px;
+        }
+        
+        
+        
+    </style>
+</head>
+
+<body>
+    <!-- div#box -->
+    <div id="box"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+
+
+</body>
+</html>

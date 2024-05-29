@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* boxsizing: 요소의 크기를 화면에 표시하는 방식
+         - width,height로 요소의 크기를 지정해줌 그때 내가 어디까지 크기를 포함시킬거냐?
+
+        (1)content-box
+        -내용(content)만을 크기로 삼는 속성
+        -내가 설정한 너비 == 컨탠츠의 너비
+        -padding, border값은 영향을 주지 못하고 요소의 크기는 계속 커져간다.
+        
+        (2)border-box
+        -border까지를 내 크기로 삶는 속성
+        -content + padding + border == 내가 정한 너비
+        -padding, border값이 들어갈수록 content의 크기가 작아지고 전체 요소의 크기는 커지지 않는다.
+
+        -box-sizing의 기초값은 content-box값이다.
+        -내가 넣는 padding, border에 따라 요소의 크기가 왔다갔다 하는게 싫으면 border-box로 수정해줘야한다
+        */
+
+        div{
+            width: 500px;
+            border: 20px solid gray;
+            /* border : 경계선의 스타일을 지정
+                        사이즈 - 속성 - 색상
+                        20px    solid   gray
+            */
+
+
+            border-radius:10px;
+
+            /* 경계선을 둥글게 만들어 주는 속성 = border-radius
+            border-top.right-radius(오른쪽 위만 둥글게 만드는 방법)
+            */
+            padding: 20px;
+
+        }
+
+        .cb{
+            box-sizing: content-box;
+        
+        }
+        .bb{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="cb">
+        <p>content-box</p>
+    </div>
+    <div class="bb">
+        <p>border-box</p>
+    </div>
+    
+</body>
+</html>
