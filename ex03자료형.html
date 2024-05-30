@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자료형 - 숫자형(number)
+        //          정수 : 1 2 3 6
+        //          실수 : 3.14
+
+        let num1 = 10;
+        let num2 = 20;
+        let num3 = 3.14;
+        let num4 = 6.25;
+        console.log(typeof(num1));
+        console.log(typeof(num3));
+        console.log(num1,num2,num3,num4);
+
+        // 자료형 - 문자열(string)
+        //          작은 따옴표(''), 큰따옴표("")
+
+        let str1 = 'hello javascript';
+        let str2 = 'hello';
+        let str3 = 'javascript';
+        console.log(str1);
+        console.log(str1,str2,str3);
+
+        // 자료형 - 논리형 (boolean)
+        //          True or False
+        let isLogin = true;
+        let isState = false;
+        console.log((isLogin));
+
+        // 자료형 - undefined & null
+        // undefined : 데이터의 자료형, 값 모두 없는 경우의 표현
+        // null : 자료형은 객체로 표현, 의도적으로 명시할 때 사용
+        
+        let empty;
+        let isNull = null;
+        console.log(empty, isNull);
+        console.log(typeof(empty),typeof(isNull));
+
+        // 참조자료형 -배열(Array)
+        // 여러개의 데이터를 하나의 공간에 저장하는 형태 - '[]'로 표현
+
+        let Array = [1, 2, 3, 4, 5]
+        console.log(Array);
+
+        // 참조자료형 - 객체(Object)
+        // 여러개의 데이터를 담는 기능, 다양한 데이터 타입을 넣기위해 사용 - {}로 표현
+        // key와 value 형태로 구성, 데이터를 구분하기 위해 (,)를 사용한다
+        let Obj = {
+            name : 'park', age : 20, epl : ['손흥민', '홀란드']
+        }
+        console.log(Obj);
+</script>
+</body>
+</html>
