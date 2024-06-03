@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //조건문
+        // 1.단순if문 : 조건식이 true일 경우에만 동작하는 조건문/ 조건식이 f일 경우 실행x
+        /*if(true){
+            console.log('실행문장 실행');
+        }
+        if(false){
+            console.log('실행문장 실행');
+        }*/
+
+        let money =15000;
+        if(money>=10000){
+            
+            console.log('돈을 출금합니다');
+        }
+
+        // 2.if else 문
+        // 조건식이 참이라면 if구문 안에 있는 실행문장 출력 ,조건이 거짓이라면 else 구문안에 있는 실행문장 출력
+
+        if(true){
+            console.log('실행문장 실행');
+        }
+        else{
+            console.log('실행문장2 실행');
+
+        }
+        if(false){
+            console.log('실행문장 실행');
+        }
+        else{
+            console.log('실행문장2 실행');
+
+        }
+
+        let num = parseInt(prompt('숫자를 입력'));
+
+        if(num%2 === 0 && num% 6=== 0){
+            console.log('2와 6의 배수입니다');
+        
+        }else{
+            console.log('2와 6의 배수가 아닙니다');
+        }
+
+        // 다중if문: 여러 조건식중 참인 경우의 실행문장을 작동시키는 경우
+        if(false){
+            console.log('실행문장실행');
+
+        }else if(false){
+
+            console.log('실행문장실행1');
+        }else if(true){
+            console.log('실행문장실행2');
+        }
+
+
+        let num2 = parseInt(prompt("첫 번째 숫자를 입력하세요"));
+        let num3 =parseInt(prompt("두 번째 숫자를 입력하세요"));
+        if(num2>num3){
+            console.log('첫번째 입력한 값이 더 큰수입니다.');
+        }else if(num2<num3){
+            console.log('두 번째 입력한 값이 더 큰 수입니다.');
+        }else{
+            console.log('두 수는 같습니다.');
+        }
+        
+
+    </script> 
+</body>
+</html>

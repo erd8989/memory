@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>연산자</h2>
+    <script>
+        // 연산자 (연산을 위해 사용하는 기호)의 종류
+
+        // 1.산술연산자(+, -, /, *, %[나머지연산자])
+        console.log(100/3);
+        console.log(100%3);
+
+        // 문자+숫자는 문자가됨
+        // console.log(1+"등"); ->1등(문자)
+        // console.log(1,"등"); ->1"등"(숫자+문자)
+
+        // 2.증감연산자 :변수의 값을 1씩 증가or감소시킴 ex);1++=2 ,1--=0
+
+        // 3. 대입연산자
+        // 산술 연산자와 대입 연산자를 복합적으로 사용 == 복합대입연산자
+        // 3-1 += : a += 3(a에 3씩 더하는 연산자) =a+3
+
+        let num2 = 100
+        num2+=3 //nem2 = num2 + 3
+        console.log("+=", num2);
+
+        // 3-2 -=
+        num2-= 3; //nem2 = num2 - 3
+        console.log("-=", num2);
+
+        //3-3 *=
+        num2 *= 3;
+        console.log('*=', num2);
+
+        // 3-4 /=
+        num2 /= 3;
+        console.log('/=', num2);
+
+        // 4.비교연산자
+        // a>b, a>=b, a<b, a<=b
+        // 초과  이상  미만  이하
+
+        // 4-1 대입 vs 비교 vs 일치
+        // =(대입), ==(비교 : 단순 내용만 비교, 자료형은 문자로 강제 변환), ===(일치: 내용과 자료형 모두 비교)                
+
+        console.log('== 비교결과', 3=='3');
+        console.log('=== 일치결과', 3==='3');
+
+        // 4-2 불일치 !=(비교), !==(일치)[4-1과 이하동문]
+        console.log('!= 비교결과', 3!='3');
+        console.log('!== 일치결과', 3!=='3');
+        // tip 
+        // bolean타입에 !를 붙이면, 반대상태가 됨
+        let mode =true
+        console.log('현재mode',mode);
+        console.log('반대mode',!mode);
+
+        // 5. 논리 연산자
+        // ||(or연산자 : 피연산자중 하나라고 true이면 true 반환)
+        console.log('or연산자', 3=='3' ||3==='3');
+        console.log('or연산자', 3==='3' ||3==='3');
+
+        // &&(and연산자: 모든 피연산자가 true여야 true)
+        console.log('or연산자', 3=='3' &&3=='3');
+        console.log('or연산자', 3=='3' &&3==='3');
+
+        // 6. 삼항연산자
+        // react에서 중요하게 여기는 연산자
+        // 참/거짓에 따라 선택적으로 실행되는 조건문
+
+        // 작성방법 : 조건문 ?선택문1 :선택문2 => 조건문이 참이면 선택문1 , 조건문이 거짓이면 선택문2실행
+
+        let auth = true;
+        let comment = auth === true ? "환영합니다." : "로그인 해 주세요"
+        console.log(comment);
+
+        //회원/비회원을 구분하거나, 다크모드/라이트모드 ...
+        //조건이 1개에 맞다 아니다 로만 구분한다면 삼항연사자
+
+        // 프로잭트  팁 : 조건이 boolean 타입 비교인 경우 짧게 생략이 가능
+         let comment2 = auth ? "환영합니다." : "로그인 해 주세요"
+         console.log(comment2);
+
+
+
+    </script>
+  
+</body>
+</html> 

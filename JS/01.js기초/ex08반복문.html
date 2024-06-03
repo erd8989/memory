@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1-100까지 수를 출력하세요
+       /* for (let num = 100; num> 0; num--) {
+            console.log(num);
+        }*/
+
+        let evenSum = 0;
+        let oddSum = 0;
+        let even = '';
+        let odd = '';
+        for(let i = 1; i<21; i++){
+            if (i%2===0) {
+                even += i + ''      // even = even + i -> ''+2 
+                evenSum += i;
+            }else {
+                odd += i + '';
+                oddSum += i;
+            }
+        }
+
+        console.log(`${even}의합: ${evenSum}`);
+        console.log(`${odd}의합: ${oddSum}`);
+        // 반복문 사용(초기식 조건식 작업후처리)
+
+      /*  function sumOddEven() {
+    let oddSum = 0;
+    let evenSum = 0;
+    
+    for (let i = 1; i <= 20; i++) {
+        if (i % 2 === 0) { // 짝수
+            evenSum += i;
+        } else { // 홀수
+            oddSum += i;
+        }
+    }
+    
+    console.log("홀수의 합: " + oddSum);
+    console.log("짝수의 합: " + evenSum);
+}
+
+ sumOddEven();    */
+
+
+
+        
+      
+       
+        
+    </script>
+</body>
+</html>
