@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  중첩 for문 for문 구조 안에 다른 for문을 정의하여 반복 수행 구문
+        
+        for (초기화(i) ; 조건식 1 ; 작업후 처리 1){
+            실행문장
+
+        for (초기화2(j) ; 조건식 2 ; 작업후 처리 2 ){
+            실행문장2
+            }
+
+        }  
+        
+        */
+
+        document.write ('<table>') 
+            
+    
+        for(let i = 1; i<7; i++){
+            document.write('<tr>,<td>')
+           
+                 for ( let j = 1; j<12; j++) {
+                 document.write(i+'학년'+j+'반<br>')
+                 }
+             document.write('</tr>,</td>')    
+            
+        }
+        document.write ('</table>') 
+       
+    </script>
+</body>
+</html>

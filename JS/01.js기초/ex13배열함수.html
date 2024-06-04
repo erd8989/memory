@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+         - 함수: 작업을 수행하는 명령문의 집합
+         -배열 함수: 배열을 편하게 다양하게 사용하기 위한 도구들
+         */
+
+         let list = ['로반', '말론', '위켄드']
+
+         //1. 배열명. includes('찾고 싶은 요소')
+         console.log('로반있니?',list.includes('로반'));
+
+        //  2. 배열명. indexof('찾고싶은 요소') ->없는 데이터는 -1 나옴
+        console.log('로반있니?',list.indexOf('로반'));
+
+        //  3. 배열명. slice(시작인덱스, 끝인 인덱스+1)
+        //  작성한 인덱스 사이에 요소들을 잘라내 새로운 배열로 반환
+         console.log(list.slice(1,3));
+         console.log(list.slice(0));
+        //  4. 변수명.split(구분자)
+        //  string 을 array로 만들어주는 함수
+        let text = '안1녕1하1세1요'
+        console.log(text.split('1'));
+
+        //5.배열명.jion()
+        //배열의 모든 요소를 연결해 하나의 string으로 만들어주는 함수
+        console.log(list.join('5'));
+
+    </script>
+</body>
+</html>
