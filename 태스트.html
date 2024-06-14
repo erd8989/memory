@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선수 점수 테이블</title>
+    <link rel="database" href="./YG/kiaPage.json">
+</head>
+<body>
+    <table id="player-table">
+        <thead>
+            <tr>
+                <th>선수명</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody id="player-table-body">
+            <!-- 여기에 JavaScript를 통해 동적으로 데이터가 들어갈 예정 -->
+        </tbody>
+    </table>
+    
+    <script>
+        // 예시 타자 데이터
+        const hitter = {
+            AVG: 0.320,
+            OBP: 0.400,
+            SLG: 0.550,
+            HR: 10,
+            RBI: 40,
+        };
+
+        // 테이블에 데이터 추가 함수
+        async function addDataToTable(data) {
+            const tableBody = document.getElementById('player-table-body');
+            tableBody.innerHTML = ''; // 테이블 몸통 비우기
+
+            // 데이터를 점수 오름차순으로 정렬
+            data.sort((a, b) => b.score - a.score);
+
+            // 정렬된 데이터를 테이블에 추가
+            data.forEach(player => {
+                const row = `<tr>
+                                <td>${player.name}</td>
+                                <td>${player.score}</td>
+                            </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // 점수 계산 및 테이블에 데이터 추가
+        calculateHitterScore()
+        .then((data) => {
+            console.log('Data:', data);
+            addDataToTable(data); // 테이블에 데이터 추가
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+        // 점수 계산 함수
+        async function calculateHitterScore() {
+            let playerDataList = [];
+            const res = await fetch('YG/kiaPage.json'); // 파일 경로를 정확히 지정해야 함
+            const jsonData = await res.json();
+
+            for (let i = 0; i < jsonData.length; i++) {
+                let score = 0;
+                const name = jsonData[i].선수명;
+                const AVG = jsonData[i].AVG;
+                const OBP = jsonData[i].OBP;
+                const HR = jsonData[i].HR;
+                const RBI = jsonData[i].RBI;
+
+                // 타율 (AVG)
+                if (AVG >= 0.350) {
+                    score += 5;
+                } else if (AVG >= 0.320) {
+                    score += 4;
+                } else if (AVG >= 0.290) {
+                    score += 3;
+                } else if (AVG >= 0.260) {
+                    score += 2;
+                } else if (AVG >= 0.230) {
+                    score += 1;
+                }
+
+                // 출루율 (OBP)
+                if (OBP >= 0.450) {
+                    score += 5;
+                } else if (OBP >= 0.430) {
+                    score += 4;
+                } else if (OBP >= 0.410) {
+                    score += 3;
+                } else if (OBP >= 0.390) {
+                    score += 2;
+                } else if (OBP >= 0.370) {
+                    score += 1;
+                }
+
+                // 홈런 (HR)
+                if (HR >= 15) {
+                    score += 5;
+                } else if (HR >= 13) {
+                    score += 4;
+                } else if (HR >= 11) {
+                    score += 3;
+                } else if (HR >= 9) {
+                    score += 2;
+                } else if (HR >= 7) {
+                    score += 1;
+                }
+
+                // 타점 (RBI)
+                if (RBI >= 55) {
+                    score += 5;
+                } else if (RBI >= 50) {
+                    score += 4;
+                } else if (RBI >= 45) {
+                    score += 3;
+                } else if (RBI >= 40) {
+                    score += 2;
+                } else if (RBI >= 35) {
+                    score += 1;
+                }
+
+                playerDataList.push({ name: name, score: score });
+            }
+
+            return playerDataList;
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
