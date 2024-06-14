@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="database" href="./YG/kiaPage.json">
+</head>
+
+<body>
+    <script>
+        // 예시 타자 데이터
+        const hitter = {
+            AVG: 0.320,
+            OBP: 0.400,
+            SLG: 0.550,
+            HR: 10,
+            RBI: 40,
+        };
+
+        // 점수 계산 함수
+        async function calculateHitterScore(hitter) {
+
+            let playerData = {};
+            let playerDataList = [];
+            const res = await fetch('kiaPage.json');
+            const jsonData = await res.json();
+            console.log(jsonData)
+
+            for (let i = 0; i < jsonData.length; i++) {
+                let score = 0;
+                const name = jsonData[i].선수명;
+                const AVG = jsonData[i].AVG;
+                const OBP = jsonData[i].OBP;
+                const SLG = jsonData[i].SLG;
+                const HR = jsonData[i].HR;
+                const RBI = jsonData[i].RBI;
+
+                if (AVG >= 0.350) {
+                    score += 5;
+                } else if (AVG >= 0.320) {
+                    score += 4;
+                } else if (AVG >= 0.290) {
+                    score += 3;
+                } else if (AVG >= 0.260) {
+                    score += 2;
+                } else if (AVG >= 0.230) {
+                    score += 1;
+                }
+
+                // 출루율 (OBP)
+                if (OBP >= 0.450) {
+                    score += 5;
+                } else if (OBP >= 0.430) {
+                    score += 4;
+                } else if (OBP >= 0.410) {
+                    score += 3;
+                } else if (OBP >= 0.390) {
+                    score += 2;
+                } else if (OBP >= 0.370) {
+                    score += 1;
+                }
+
+                //장타율(SLG)
+                if (SLG >= 0.600) {
+                    score += 5;
+                } else if (SLG >= 0.550) {
+                    score += 4;
+                } else if (SLG >= 0.500) {
+                    score += 3;
+                } else if (SLG >= 0.450) {
+                    score += 2;
+                } else if (SLG >= 0.400) {
+                    score += 1;
+                }
+
+                // 홈런 (HR)
+                if (HR >= 15) {
+                    score += 5;
+                } else if (HR >= 13) {
+                    score += 4;
+                } else if (HR >= 11) {
+                    score += 3;
+                } else if (HR >= 9) {
+                    score += 2;
+                } else if (HR >= 7) {
+                    score += 1;
+                }
+
+                // 타점 (RBI)
+                if (RBI >= 55) {
+                    score += 5;
+                } else if (RBI >= 50) {
+                    score += 4;
+                } else if (RBI >= 45) {
+                    score += 3;
+                } else if (RBI >= 40) {
+                    score += 2;
+                } else if (RBI >= 35) {
+                    score += 1;
+                }
+
+
+                playerDataList.push({ name: name, score: score })
+            }
+            // 타율 (AVG)
+
+            return playerDataList;
+        }
+
+        // 점수 계산
+
+
+        calculateHitterScore()
+            .then((data) => {
+                console.log('Data:', data)
+
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+
+            });
+    </script>
+</body>
+
+</html>

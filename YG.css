@@ -1,0 +1,66 @@
+document {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    display: flex;
+    gap: 20px;
+}
+.sidebar{
+    width: 15%;
+}
+.infoContainer{
+    width: 85%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.champion-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+.header div {
+    display: flex;
+    align-items: center;
+}
+
+.header button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.header button.active {
+    background-color: #007bff;
+    color: white;
+}
