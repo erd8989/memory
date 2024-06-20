@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="frm" method="post" action="#" target="_blank" onsubmit="return false">
+        <input type="text" name="name">
+        <input type="submit" value="출력" onclick="setName">
+    </form>
+
+    <div id="space"></div>
+
+    <script>
+        let inputName = document.frm.name
+        const setName = () => {
+            console.log('name', inputName.value)
+
+            let space = document.getElementById('space')
+            space.innerHTML += `${inputName.value}<br/>`
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="frm" method="post" action="#" target="_blank" onsubmit="return false;">
+        <select name="major" onchange="sel_change()">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JS</option>
+        </select>
+        <input type="submit" value="전송" onclick="send()">
+
+        <script>
+            /*기본적으로 form태그 내에 있는 input,button을 입력하게 되면
+            form태그는 제출을 하려고 한다.
+            내가 만약에, 제출을 하기 전 다른 함수를 실행시켜주고 싶다면?
+            <form>태그에 onsubmit=(return false)를 추가해둔다
+            */
+        </script>
+</body>
+
+</html>

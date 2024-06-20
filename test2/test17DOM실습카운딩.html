@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="num">
+        0
+    </p>
+
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+
+
+    <script>
+
+        const increase = () => {
+
+            console.log('increase function called');
+            let num = document.getElementById('num')// let에 있는 num은 js의 num이고 ('num')은 html의 num이라 별개의 존재이다.
+            // console.log(parseInt(num.innerText));
+            num.innerText = parseInt(num.innerText) + 1
+
+
+        }
+
+        const decrease = () => {
+            console.log('decrease function called');
+            let num = document.getElementById('num');
+            // console.log(parseInt(num.innerText));
+            num.innerText = parseInt(num.innerText);
+            if (parseInt(num.innerText) > 0) {
+                num.innerText = parseInt(num.innerText) - 1;
+
+            }
+
+        }
+
+
+
+
+
+
+
+        /* 버튼 클릭시 숫자 카운팅되는 프로그램
+
+        1. increse라는 함수 선언하고 화살표 버튼 눌렀을 때 그 함수가 호출되는지 확인
+
+        2. decrease라는 함수를 선언하고 화살표 버튼 눌렀을 때 그 함수가 호출되는지 확인
+
+        3. '0'이라는 숫자요소를 문서에서 가지고 와서 변수 num에 저장
+        4.increase라는 버튼을 누르면 0이 하나씩증가 
+        4.decrease라는 버튼을 누르면 0이 하나씩감소
+        5.이때 decrease 아무리 눌러도 음수안감
+        */
+
+
+
+
+    </script>
+
+</body>
+
+</html>

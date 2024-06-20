@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1tag">마우스를 올려주세요!</h1>
+    <button id="btn">클릭!</button>
+
+    <script>
+         // 1.아이디가 btn인 버튼 클릭 시,  '클릭이벤트발생'이라는 팝업창 띄워줌
+        // 리스너 방식으로 이벤트 작성
+        //  함수는 니 마음대로
+
+        // 2.아이디가 h1tag인 ha위에 마우스 올리시 마우스 hover라고 뜸
+
+        let h1tag = document.getElementById("h1tag")
+        h1tag.addEventListener('mouseover',()=>{
+            alert('마우스 hover')
+        })
+
+        
+
+        const btn1 = ()=>{
+            alert('클릭이벤트발생')
+        }
+
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click',btn1)
+
+        
+    </script>
+       
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputTxT">
+    <p id="conainer"></p>
+
+    <script>
+        // 1.id가 input txt인 요소를 가져와 input txt 에 저장한다 
+        const inputTxT = document.getElementById("inputTxT")
+        // 2.input txt가 변경될때마다 input txt안에 있는 값(value)을 cosole에 확인
+        inputTxT.addEventListener("change",()=>{
+            const value1  =inputTxT.value ;
+            console.log(value1);
+            document.getElementById('conainer').innerText = value1;
+        })
+        // 가져온값을 id가 container인 p 태그 안에 입력(inner text)
+        // 우리가 사용할 이벤트는 'change'입니다.
+
+
+            
+        
+        
+
+    </script>
+</body>
+</html>

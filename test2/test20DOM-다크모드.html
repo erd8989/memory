@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark {
+            background-color: black;
+            color: white
+        }
+
+        .light {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="light">
+        <h1>
+            인공지능사관학교
+        </h1>
+        <button id="btnText" onclick="changeMode()">dark 모드</button>
+    </div>
+    <script>
+        //1.change mode라는 함수 선언 = changeMode=()=>
+        // 2. 다크모드 버튼클릭시 라이트 모드 (<-->):id가 btnText인 요소 가져온다 단 현재모드가 다크모드인지 라이트모드인지 구분후 변경
+        // 3.class가 light=>버튼클릭시 Dark모드 (contain, togle)
+        changeMode = () => {
+            const container = document.getElementById('container');
+            const button = document.getElementById('btnText');
+
+            container.classList.toggle('dark');
+            container.classList.toggle('light');
+
+            if (container.classList.contains('dark')) {
+                button.textContent = 'light 모드'; //button.textcontnent = btntext.innertext
+            } else {
+                button.textContent = 'dark 모드';
+            }
+        }
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

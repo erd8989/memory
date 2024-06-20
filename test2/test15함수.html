@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 계산기 실습
+    1. 숫자 입력(num1.num2)
+    2. 연산기호(+ - *  / )
+    3. 4개함수 생성(매개변수는 a,b)
+    4.리턴 포함   (마이너스 나누기는 큰수-작은수)
+    5.결과는 _과_에 대한 연산결과는 _입니다.
+    */
+
+    const addnum = (a, b) => {
+      return a + b;
+
+    }
+
+    const minusnum = (a, b) => {
+      if (num1 > num2) {
+        return a - b;
+
+      } else {
+        return b - a;
+      }
+
+    }
+
+    const mutinum = (a, b,) => {
+      return a * b;
+
+    }
+
+    const devnum = (a, b) => {
+      if (num1 > num2) {
+        return a / b;
+
+      } else {
+        return b / a;
+      }
+
+
+    }
+
+    let num1 = Number(prompt('숫자입력'))
+    let num2 = Number(prompt('숫자입력'))
+    let press = prompt('기호')
+
+    if (press === '+') {
+      document.write('연산결과는' + addnum(num1, num2))
+    } else if (press === '-') {
+      document.write('연산결과는' + minusnum(num1, num2))
+    } else if (press === '*') {
+      document.write('연산결과는' + mutinum(num1, num2))
+    } else if (press === '/') {
+      document.write('연산결과는' + devnum(num1, num2))
+
+    } else {
+      alert('잘못입력')
+    }
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
