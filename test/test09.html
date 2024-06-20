@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = 1; //입력할 값 * a 의 a
+        let num = parseInt(prompt()); //입력할 값
+        let sum = 0; //배수의 합
+        do {
+            let num2 = num * num1 //num2는 num의 배수로 정의
+            console.log(num2); //배수 출력
+            num1++ // a값이 계속 커져간다
+            sum += num2 //배수의 값들을 전부 더한다
+
+        } while (num * num1 < 100); // 배수가 100이 안넘도록 한다,'num2가 안되는 이유는 do{} 안에서만 적용되기 때문'
+
+        console.log(sum); //배수의 합을 출력
+
+
+
+    </script>
+</body>
+
+</html>

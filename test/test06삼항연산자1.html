@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = parseInt(prompt("한 박스에 담을 오렌지수를 입력하세요"));
+        let num1 = parseInt(prompt("현재 오랜지수를입력하세요"));
+
+        // let big = Number(num)>Number(num1) ? Number(num)+"이 큰수입니다" : Number(num1)+"이 더 큰수입니다"
+        // console.log(big);
+
+        // let hap = num % 2 === 1 ? num+"홀수": num+"짝수"
+        // let hat = num1 % 2 === 1 ? num1+"홀수": num1+"짝수"
+        // console.log(hap);
+        // console.log(hat);
+
+        let orange = num1 % num === 0 ? parseInt(num1 / num) : parseInt(num1 / num) + 1
+        console.log(orange);
+
+
+    </script>
+</body>
+
+</html>
