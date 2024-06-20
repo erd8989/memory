@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*내장객체 (built- in object)
+        js에서 제공되는 기본적인 객체
+        */
+
+        //1.date : 날씨나 시간에 관련된 정보를 제공
+
+        //1-1) newDate() : 현재 날짜와 시간을 가진다
+        const date = new Date();
+        console.log(date);
+
+        console.log(date.getFullYear());//연도
+        console.log(date.getMonth());//월+1
+        console.log(date.getDate());//
+        console.log(date.getHours());
+
+
+        //현제시각 작성 eX;오후3시
+        let hour = date.getHours()
+        let ampm = hour >= 12 ? '오후' : '오전'
+        hour %= 12
+        hour = hour || 12;
+        console.log(`${ampm} ${hour}시`);
+
+        // 2.math
+        // 2-1 반올림(round), 내림(floor)
+        console.log(Math.round(1.4));
+
+        // 2-2) 최대수 최소수
+        console.log(Math.max(1, 4, 3));
+
+        // 2-3 렌덤값 math.random()=> 0-1사이 값 나옴
+        console.log(Math.floor(Math.random() * 10));
+
+        //렌덤생성함수
+        const makeRandomNum = (num) => {
+            return Math.floor(Math.random() * num) + 1
+        }
+
+        console.log(makeRandomNum(10));
+
+    </script>
+
+</body>
+
+</html>

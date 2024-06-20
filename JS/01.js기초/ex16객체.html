@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*객체(object)
+        js는 객체 기반의 스크립트 언어, js를 이루고 있는 대부분 객체
+        여러 속성을 하나의 변우세 저장할 수 있는 데이터 타입
+        중괄호 표기를 이용하여 만들 수 있다
+        key- value 형식으로 저장이 가능하다.
+        한쌍의 key-value가 있다면, 그 뒤에 오는 key/value는 , 로 구분해야 한다.
+        객체 안에 함수를 넣을 수 있다.
+        
+
+        */
+
+
+        // 사용자 정의 객체()
+        let person = {
+            name: '가나',
+            sub: '다라',
+            gender: 'akqk',
+            team: 'tkdk',
+            skill: function () { console.log('백만볼트!'); }
+
+        }
+        console.log(person);
+
+        // 객체출력 : 객체 접근에 필요한 기호 (.)
+        // 1. 객체 안에 값이 일반 데이터인 경우
+        // 객체 이름 . 속성
+        console.log(person.name);
+        // 객체 이름['속성']
+        console.log(person['sub']);
+
+        // 2. 겍체 안에 값이 함수인 경우
+        // 객체이름.속성()
+        console.log(person.skill());
+        // person이라는 객체에 skill이라는 속성 안에 저장되어있는 함수 호출
+
+        let pocketmon1 = {
+            이름: '피카츄',
+            도감번호: '0025',
+            타입: '쥐 포켓몬',
+            색깔: '노란색',
+            포획률: 190,
+            기술: function () { console.log('정전기'); }
+        }
+        let pocketmon2 = {
+            이름: '라이츄',
+            도감번호: '0026',
+            타입: '쥐 포켓몬',
+            색깔: '주황색',
+            포획률: 75,
+            기술: function () { console.log('정전기'); }
+        }
+        let pocketmon3 = {
+            이름: '꼬부기',
+            도감번호: '0007',
+            타입: '꼬마거북 포켓몬',
+            색깔: '하늘색',
+            포획률: 45,
+            기술: function () { console.log('급류'); }
+
+        }
+        console.log('top1', pocketmon1);
+        console.log('top2', pocketmon2);
+        console.log('top3', pocketmon3);
+
+
+    </script>
+</body>
+
+</html>
