@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul">
+        <li>HTML</li>
+
+    </ul>
+    <script>
+        // 노드 : dom객체에서 다루는 가장 작은 단위(text, tag attribute등 다 쪼개져서 관리)
+        // 일반적인 사고 정리
+
+        /*자바스크립트로 아래 공식 만들기
+            <ul id="ul">
+               <li>HTML</li>
+
+            </ul>
+                   */
+
+        // 1. li태그를 생성
+        // 요소노드(태그)를 생성하는 방법 -> document.createElement("li");
+        const li = document.createElement("요소명");
+
+
+        // 2. li테그안에 텍스트 입력
+        const text = document.createTextNode("css");
+        // 3. 생성한 택스트 노드를 li노드에 넣는다.
+        li.appendChild(text)
+
+        // 4. 생성한li태그를 ul태그안에 넣기
+        const ul = document.getElementById("ul");
+        ul.appendChild(li)
+
+        // 노드를 생성하는 경우 지켜야하는 순서
+        // 1. 생성하고 싶은 요소를 제작 -> create
+        // 2. 택스트가 필요한 경우 텍스트 노드를 제작
+        // 2-1 이미지인 경우네는 속성노드를 제작(document.createAttribute)
+        // 3. 생성한 텍스트를 요소에 넣어주기 ->appendChild
+        // 3-1. 생성한 속성을 요소에 넣어주기 ->setAttribute
+        // 4. 최종적으롤 태그를 포함 시켜야한다.->appendChild (ul, li만)
+        // * 태그를 만들고 -> 텍스트나 속성을 부여하고 -> 부모태그에 넣어라
+
+        // 배열과 반복문을 통해서 node생성을 편하게 해보자.
+        let textlist = ['김태영', '강지현', '김헌도', '송풍규', '이정현', 'adsf']
+
+        //  <li> 태그와 배열의 내용을 함깨 쌓아줄 공간
+        let lilist = []
+
+        for (let i = 0; i < textlist.length; i++) {
+            // 1. li라는 element 생성
+            lilist.push(document.createElement("li"))
+            // 2. 그 안에 배열 속 데이터를 적절하게 넣기
+             lilist[i].appendChild(document.createTextNode(textlist[i]))
+            // 3. 잘 생성해둔 list배열을 화면에 띄워줄 것
+            console.log(lilist);
+            ul.appendChild(lilist[i])
+            // 댓글달기 sns구현 등에 자주사용됨
+        }
+
+    </script>
+</body>
+
+</html>

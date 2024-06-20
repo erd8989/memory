@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <button id="addbtn">버튼추가하기</button>
+    <div id="container"></div>    
+    <script>
+        // 1. id가 addbtn인 버튼 누름
+        // 2. id가 container인 공간 안에 새로운 버튼 생성
+        // html메소드 사용
+
+        $('#addbtn').click(()=>{
+            $('#container').html('<button id="newbtn">새로운 버튼</button>')
+            
+        })
+
+        // 새로운 버튼에 이벤트를 걸어볼자
+        // $('#neWbtn').click(()=>{
+        //      console.log('new button');
+        // })
+
+        /* 동적 이벤트 바인딩
+        -.click(): 최초 페이지를 로딩할 때 선언되있던 요소에 이벤트 바인딩
+                            => 그 이후로는 더이상 바인딩x
+        -내가 클릭할 대상이 포함되어있는 공간.on('click',클릭될 대상, 함수) : 동적으로 추가된 요소에 이벤트 바인딩을 걸어준다
+
+            $(document) => 자주사용
+        
+        */
+
+        $(document).on('click', '#netbtn', ()=>{
+            console.log('new button');
+        })
+        
+         
+        
+    </script>
+    
+</body>
+</html>
