@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Get방식 로그인 </h1>
+    <form action="http://192.168.21.234:3000/getLogin" method="get">
+
+        id : <input type="text" name="id"> <br>
+        pw : <input type="password" name="pw"> <br>
+        <input type="submit" value="로그인">
+        <button onclick="abc()" type="button">아이디 검사</button>
+    </form>
+
+    <h2> post방식 로그인 </h2>
+    <form action="http://192.168.21.234:3000/postLogin" method="post">
+
+        id : <input type="text" name="id"> <br>
+        pw : <input type="password" name="pw"> <br>
+        <input type="submit" value="로그인">
+        <button onclick="abc()" type="button">아이디 검사</button>
+
+
+
+
+    </form>
+
+
+
+
+
+</body>
+</html>
