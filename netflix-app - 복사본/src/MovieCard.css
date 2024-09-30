@@ -1,0 +1,41 @@
+.movie-card {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 1px;
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .movie-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    visibility: hidden;
+  }
+  
+  .movie-card:hover .overlay {
+    visibility: visible;
+  }
+  
+  .movie-slide-container {
+    background-color: black;
+    padding: 20px;
+  }
+  
