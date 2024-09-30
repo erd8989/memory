@@ -9,7 +9,7 @@ const TodoHome = () => {
       <TodoInput/>
 
       {/* 해야할일 */}
-      <TodoList title={'해야할 일 0개'} checked={false}/>
+      <TodoList title={`해야할 일 ${TodoList.length}개`} checked={false}/>
 
       {/* 완료된 일 */}
       <TodoList title={'완료된 일 0개'} checked = {true}/>

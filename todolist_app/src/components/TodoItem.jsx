@@ -4,7 +4,7 @@ import TodoList from './TodoList';
 import { FaRegCircle } from "react-icons/fa";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { textChangeTodo } from '../redux/reducers/TodoSlice';
+import { checkChangeTodo, deleteTodo, textChangeTodo } from '../redux/reducers/TodoSlice';
 
 const TodoItem = ({todo}) => {
 
@@ -21,35 +21,44 @@ const TodoItem = ({todo}) => {
     setEdit(true)
   }
 
-  const handelsubmit =() =>{
+  const handleSubmit =() =>{
     // store내 todoList 아이템 내용을 변경하기 위해서 
     //  구분할 수 있는 id와 변경내용인 text를 객체형태로 전달
     dispatch(textChangeTodo({id:todo.id,text:news}))
     setEdit(false)
-    
+  }
+
+  const handleChange = () =>{
+    dispatch(checkChangeTodo({id:todo.id}))
+  }
+
+  const handelDelete =() =>{
+    dispatch(deleteTodo({id:todo.id}))
   }
 
   return (
    <li className='todo-item'>
-      {/* <FaCheckCircle className='todo-item-checkbox'/> */}
-      <FaRegCircle className='todo-item-checkbox' style={{color:'lightgray'}}/>
-
+    {todo.complete ?   <FaCheckCircle className='todo-item-checkbox'onClick={handleChange}/>:
+      <FaRegCircle className='todo-item-checkbox' style={{color:'lightgray'}} onClick={handleChange}/>}
+    
       {edit?
       <div>
         <input type='text' className='todo-item-edit-input' value={news} 
         onChange={(e)=> setNews(e.target.value)}/>
-        <button className='todo-item-submit-btn' onClick={handelsubmit}>👍</button>
+        <button className='todo-item-submit-btn' onClick={handleSubmit}>👍</button>
       </div>
       :
       <div>
-       <span className='todo-item-content'>{todo.text}</span>
-       <button className='todo-item-edit-btn' onClick={handelEdit}>✍</button>
+       <span className={`todo-item-content ${todo.complete?"todo-item-content-checked ":" "}`}>{todo.text}</span>
+       {todo.complete?'':<button className='todo-item-edit-btn' onClick={handelEdit}>✍</button>}
+       
       </div>
       }
+      <div>
+      <button className='todo-item-delete-btn' onClick={handelDelete}>🗑</button>
+      </div>
 
-
-     
-      <button className='todo-item-delete-btn'>🗑</button>
+      
    </li>
   )
 }

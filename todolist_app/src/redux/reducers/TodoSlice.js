@@ -10,12 +10,13 @@ const TodoSlice = createSlice({
     reducers:{
         addTodo:(state,action)=>{
             state.todoList =state.todoList.concat(action.payload)
-
         },
 
         checkChangeTodo:(state,action)=>{
-            // state.keyword = action.
-
+            state.todoList = state.todoList.map((item)=>({
+                ...item,
+                complete: item.id === action.payload.id ? !item.complete: item.complete
+            }))
         },
 
         textChangeTodo:(state,action)=>{
@@ -28,7 +29,7 @@ const TodoSlice = createSlice({
         },
 
         deleteTodo:(state,action)=>{
-
+            state.todoList = state.todoList.filter(item => item.id !== action.payload.id);
         }
     }
 })   

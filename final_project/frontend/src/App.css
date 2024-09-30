@@ -1,0 +1,52 @@
+.APP{
+  height: 100vh;
+}
+
+
+.header{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(236, 179, 163);
+  height: 15%;
+}
+
+.header_section{
+  display: flex;
+  align-items: center;
+}
+
+.header_section>a{
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.content{
+  height: 75%;
+  display: flex;
+  flex-direction:column ;
+  justify-content:center;
+  align-items: center;
+  gap: 50px;
+}
+
+.content-slide{
+  height: 75%;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  background-color:  rgb(236, 179, 163);
+}
+
+.project{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 5px solid rgb(236, 179, 163);
+  width: 80%;
+  height: 500px;
+  margin: 1% auto;
+
+}

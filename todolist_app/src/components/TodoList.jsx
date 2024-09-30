@@ -8,8 +8,6 @@ const TodoList = ({title,checked}) => {
 
   console.log(todoList);
   
-
-
   return (
     <div className='todo-list'>
 
